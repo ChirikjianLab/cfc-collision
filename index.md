@@ -10,7 +10,7 @@ This paper studies the narrow phase collision detection problem for two general 
 
 # Supplementary Video
 
-<iframe width="640" height="360" src="https://www.youtube.com/embed/n6dGRaLTv88" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<iframe width="640" height="360" src="https://youtu.be/qcjZRinQ66k" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 # Author
 

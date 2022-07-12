@@ -1,4 +1,4 @@
-## Welcome to GitHub Pages
+## Collision Detection for Unions of Convex Bodies with Smooth Boundaries using Closed-form Contact Space Parameterization
 
 You can use the [editor on GitHub](https://github.com/ChirikjianLab/minksumcloseddistancemoveit/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
 

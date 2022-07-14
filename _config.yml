@@ -1,2 +1,9 @@
+title: Collision Detection based on Closed-form Contact Space
+description: Project page for "Collision Detection for Unions of Convex Bodies With Smooth Boundaries Using Closed-Form Contact Space Parameterization".
 theme: jekyll-theme-cayman
-title: Collision Detection for Unions of Convex Bodies with Smooth Boundaries using Closed-form Contact Space Parameterization
+defaults:
+  -
+    scope:
+      path: "" # an empty string here means all files in the project
+    values:
+      layout: "default"

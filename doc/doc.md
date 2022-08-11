@@ -1,11 +1,9 @@
-# CFC: Collision detection based on closed-form contact space parameterization
-Collision detection, distance queries (penetration depth), closes points computations via closed-form contact space (CFC) for unions of convex bodies with smooth boundaries.
-
+# Documentation
 ## Introduction
 This is the C++ implementation for the narrow phase collision detection problem between two general unions of convex bodies encapsulated by smooth surfaces. The approach, namely CFC (Closed-Form Contact space), is based on parameterizing their contact space in closed-form. The first body is dilated to form the contact space while the second is shrunk to a point. Then, the collision detection is formulated as finding the closest point on the parametric contact space with the center of the second body. Numerical solutions are proposed based on the point-to-surface distance as well as the common-normal concept. Furthermore, when the two bodies are moving or under linear deformations, their first time of contact is solved continuously along the time-parameterized trajectories. Benchmark studies are conducted for the proposed algorithms in terms of solution stability and computational cost.
 
 - Paper: [IEEE Robotics and Automation Letters (RA-L)](https://ieeexplore.ieee.org/document/9829274)
-- Project page: [https://chirikjianlab.github.io/cfc-collision/](https://chirikjianlab.github.io/cfc-collision/)
+- Project page: [https://chirikjianlab.github.io/cfc-collision-page/](https://chirikjianlab.github.io/cfc-collision-page/)
 - Application code repository: [https://github.com/ruansp/cfc_collision_app](https://github.com/ruansp/cfc_collision_app)
 - MATLAB implementation: [https://github.com/ChirikjianLab/cfc-collision-matlab](https://github.com/ChirikjianLab/cfc-collision-matlab)
 - Data: [Benchmark data in the paper](https://drive.google.com/drive/folders/17jSSC-EIhiSTqXSgfoEOs4R7mzKy1d1i?usp=sharing)
@@ -30,12 +28,6 @@ The script to automatically install the above dependencies is provided in `/scri
 ## Compilation and installation
 The core implementation is a templated header-only library. Therefore, to use the classes, there is no need to compile but you could simply copy the `/include` directory to the specific path and link/include in your own project correctly. The following compilation instructions are only for unit tests and benchmark scripts. The following installation step will copy all the core header files into the default or user-speficied installation directory.
 
-### Download the repository
-- Clone the repository
-```sh
-git clone https://github.com/ChirikjianLab/cfc-collision.git
-```
-
 ### Build in localhost
 - Installation can follow the standard CMake project. After clonging and go to the source directory,
 ```sh
@@ -55,15 +47,19 @@ make test
 ```
 
 ### Build using Docker
-- After cloning the repository, go to `/script` folder and start Docker container
+- In the `/home` directory, make a new folder `/docker`, and clone the source file
 ```sh
-cd /script
+mkdir ~/docker
+cd ~/docker
+git clone https://github.com/ruansp/cfc_collision
+```
+- Start Docker container
+```sh
+cd cfc_collision/script
 chmod +x start_docker.sh
 ./start_docker.sh
 ```
-It will download the image if for the first time. 
-
-- Then, build the package _inside the container_,
+- It will download the image if the first time. Then build the package _inside the container_,
 ```sh
 cd /home/cfc
 mkdir build && cd build
@@ -84,7 +80,7 @@ To uninstall,
 **Note**
 By default, the header files of the core library will be installed within `/usr/local`. You could also specify the folder in the "cmake" step by 
 ```sh
-cmake -DCMAKE_INSTALL_PREFIX=/your/specified/path/ ../
+cmake -DCMAKE_INSTALL_PREFIX=/your/specified/path ../
 ```
 
 ## Running instructions
@@ -116,7 +112,7 @@ For continuous case:
 - `bench_config_continuous_${GeomType}_s1.csv`, `bench_config_continuous_${GeomType2}_s2.csv`: Configuration for the two bodies.
 - `bench_result_continuous_${GeomType}_${GeomType}_${CCDMethod}.csv`: Benchmark results for different methods.
 
-To visualize the benchmark results (i.e., comparisons on running time, accuracy and number of iterations), please refer to the [instructions](https://github.com/ChirikjianLab/cfc-collision-matlab/blob/main/data/README.md) in the repository of MATLAB implementation.
+To visualize the benchmark results (i.e., comparisons on running time, accuracy and number of iterations), please refer to the [instructions](https://github.com/ruansp/cfc_collision_matlab/blob/main/data/README.md) in the repository of MATLAB implementation.
 
 **Note**
 - ${GeomType} = {"SQ", "E", "PE"}

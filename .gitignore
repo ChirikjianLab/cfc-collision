@@ -1,3 +1,6 @@
 /_site
 Gemfile
 Gemfile.lock
+/build
+/data
+CMakeLists.txt*

@@ -1,0 +1,26 @@
+var classcfc_1_1PolyEllipsoid =
+[
+    [ "PolyEllipsoid", "d3/dd1/classcfc_1_1PolyEllipsoid.html#af92f1a6331434a588f7a2ff927db5024", null ],
+    [ "a", "d3/dd1/classcfc_1_1PolyEllipsoid.html#ad1c75a90447e7968f943e5d759330c8c", null ],
+    [ "b", "d3/dd1/classcfc_1_1PolyEllipsoid.html#ad7d1454722b385974099729bbeb5e7fd", null ],
+    [ "getBoundaryFromGradient", "d3/dd1/classcfc_1_1PolyEllipsoid.html#af2ec95162ec41ac2343d424e0e20949b", null ],
+    [ "getBoundaryFromNormal", "d3/dd1/classcfc_1_1PolyEllipsoid.html#ad80e05e57529354349b9b5d62ca6d37c", null ],
+    [ "getBoundaryFromSpherical", "d3/dd1/classcfc_1_1PolyEllipsoid.html#a29a7bce6cb402ebe24842a648d98beed", null ],
+    [ "getGradientFromCartesian", "d3/dd1/classcfc_1_1PolyEllipsoid.html#a190679d972113b6256bebd374152f1b0", null ],
+    [ "getGradientFromDirection", "d3/dd1/classcfc_1_1PolyEllipsoid.html#a69dc1f5d69d7709c9cb844f16ae441d3", null ],
+    [ "getGradientFromHypersphere", "d3/dd1/classcfc_1_1PolyEllipsoid.html#a8b813242cf43361e2fce6a027611fcf0", null ],
+    [ "getGradientFromSpherical", "d3/dd1/classcfc_1_1PolyEllipsoid.html#a3a05e5915d2f941f01bc4bbfebc01616", null ],
+    [ "getHypersphereFromGradient", "d3/dd1/classcfc_1_1PolyEllipsoid.html#ae819eb79bd02bed2bd3f3dbe3e21edac", null ],
+    [ "getHypersphereFromSpherical", "d3/dd1/classcfc_1_1PolyEllipsoid.html#ac48be88040ac474a89380035e66fcefa", null ],
+    [ "getImplicitFunction", "d3/dd1/classcfc_1_1PolyEllipsoid.html#a565f0f03d52fadfc5e93bf29cdd46629", null ],
+    [ "getShape", "d3/dd1/classcfc_1_1PolyEllipsoid.html#a73bf25f7508e6cfd28d3611bf28e5fc0", null ],
+    [ "getShapeParamOctant", "d3/dd1/classcfc_1_1PolyEllipsoid.html#aab5c75af9c8ed5db14af7d4ceedfd6f3", null ],
+    [ "pos", "d3/dd1/classcfc_1_1PolyEllipsoid.html#a9890c4e0f1dd266441ffe6a871af90ad", null ],
+    [ "q", "d3/dd1/classcfc_1_1PolyEllipsoid.html#a66d7869fa6773e31edd66d9b9c1a0257", null ],
+    [ "quaternion", "d3/dd1/classcfc_1_1PolyEllipsoid.html#a7ca30075d9d95ac56ca80dff627eedc8", null ],
+    [ "setOrientation", "d3/dd1/classcfc_1_1PolyEllipsoid.html#abc5ec0db1e09f13351c862968fba24ca", null ],
+    [ "setOrientation", "d3/dd1/classcfc_1_1PolyEllipsoid.html#a74c9f35d013e4adf562bb4eabd71d912", null ],
+    [ "setPosition", "d3/dd1/classcfc_1_1PolyEllipsoid.html#a01d79920442ba79e71b715e919e80107", null ],
+    [ "setSemiAxes", "d3/dd1/classcfc_1_1PolyEllipsoid.html#a3f66d17724bd423c35d35fdc05e0d95d", null ],
+    [ "shape_", "d3/dd1/classcfc_1_1PolyEllipsoid.html#af880a5d15cb0775f98577a61651480b9", null ]
+];

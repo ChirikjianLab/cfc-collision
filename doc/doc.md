@@ -1,9 +1,4 @@
-# CFC: Collision detection based on closed-form contact space parameterization
-[![C++](https://github.com/ChirikjianLab/cfc-collision/actions/workflows/github-action-ci-basic.yml/badge.svg)](https://github.com/ChirikjianLab/cfc-collision/actions/workflows/github-action-ci-basic.yml)
-[![Clang-Tidy](https://github.com/ChirikjianLab/cfc-collision/actions/workflows/github-action-ci-clang-tidy.yml/badge.svg)](https://github.com/ChirikjianLab/cfc-collision/actions/workflows/github-action-ci-clang-tidy.yml)
-
-Collision detection, distance queries (penetration depth), closes points computations via closed-form contact space (CFC) for unions of convex bodies with smooth boundaries.
-
+# Documentation
 ## Introduction
 This is the C++ implementation for the narrow phase collision detection problem between two general unions of convex bodies encapsulated by smooth surfaces. The approach, namely CFC (Closed-Form Contact space), is based on parameterizing their contact space in closed-form. The first body is dilated to form the contact space while the second is shrunk to a point. Then, the collision detection is formulated as finding the closest point on the parametric contact space with the center of the second body. Numerical solutions are proposed based on the point-to-surface distance as well as the common-normal concept. Furthermore, when the two bodies are moving or under linear deformations, their first time of contact is solved continuously along the time-parameterized trajectories. Benchmark studies are conducted for the proposed algorithms in terms of solution stability and computational cost.
 
@@ -38,6 +33,7 @@ This is the C++ implementation for the narrow phase collision detection problem 
 ```
 
 **Note** 
+
 The script to automatically install the above dependencies is provided in "/script/install-dependencies.sh".
 
 ## Compilation and installation
@@ -58,6 +54,7 @@ cmake .. && make
 ```
 
 **Note**
+
 By default, the test and benchmark scripts are built if the correct external libraries are installed and found. To disable testing, add argument in the cmake step
 ```sh
 cmake -DBUILD_TESTING=off ../
@@ -96,6 +93,7 @@ To uninstall,
 ```
 
 **Note**
+
 By default, the header files of the core library will be installed within "/usr/local". You could also specify the folder in the "cmake" step by 
 ```sh
 cmake -DCMAKE_INSTALL_PREFIX=/your/specified/path/ ../
@@ -133,6 +131,7 @@ For continuous case:
 To visualize the benchmark results (i.e., comparisons on running time, accuracy and number of iterations), please refer to the [instructions](https://github.com/ChirikjianLab/cfc-collision-matlab/blob/main/data/README.md) in the repository of MATLAB implementation.
 
 **Note**
+
 - ${GeomType} = {"SQ", "E", "PE"}
 - ${StaticMethod} = {"CFCFixedPoint", "CFCLeastSquares", "CFCLeastSquaresCommonNormal", "FCL", "Implicit", "CommonNormalFixedPoint", "CommonNormalLeaseSquares"}
 - ${CCDMethod} = {"CFCLeastSquaresTran", "CFCLeastSquaresLinear"}

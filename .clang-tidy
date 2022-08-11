@@ -1,0 +1,18 @@
+---
+Checks:   '-*,
+          bugprone-*,
+          google-*,
+          misc-*,
+          modernize-*,
+          readability-*,
+          performance-*,
+          -misc-no-recursion,
+          -modernize-use-trailing-return-type,
+          -readability-identifier-length,
+          -readability-avoid-const-params-in-decls,
+          -readability-magic-numbers,
+          -misc-non-private-member-variables-in-classes'
+
+
+HeaderFilterRegex: 'include/cm[^/]*\.(h|hxx|cxx)$'
+...

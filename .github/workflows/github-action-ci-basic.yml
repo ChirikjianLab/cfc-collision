@@ -1,0 +1,27 @@
+name: C++
+on:
+  # Triggers the workflow on push or pull request events but only for the "master" branch
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+jobs:
+  Build-and-Test:
+    runs-on: ubuntu-20.04
+    container:
+        image: ruansp/ubuntu-20.04:cfc
+    steps:
+      - uses: actions/checkout@v2
+      - name: Check Environement
+        run: pwd && echo $USER
+      - name: Compile
+        run: |
+          mkdir build && cd build
+          cmake ../ && make
+      - name: Test
+        run: cd build && ctest
+      - name: Install and uninstall
+        run: |
+          cd build
+          make install
+          make uninstall

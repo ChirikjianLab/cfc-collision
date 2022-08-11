@@ -9,7 +9,7 @@ This is the C++ implementation for the narrow phase collision detection problem 
 
 - Paper: [IEEE Robotics and Automation Letters (RA-L)](https://ieeexplore.ieee.org/document/9829274)
 - Project page: [https://chirikjianlab.github.io/cfc-collision/](https://chirikjianlab.github.io/cfc-collision/)
-- Application code repository: [https://github.com/ruansp/cfc_collision_app](https://github.com/ruansp/cfc_collision_app)
+- Application code repository: [https://github.com/ChirikjianLab/cfc-collision-app](https://github.com/ChirikjianLab/cfc-collision-app)
 - MATLAB implementation: [https://github.com/ChirikjianLab/cfc-collision-matlab](https://github.com/ChirikjianLab/cfc-collision-matlab)
 - Data: [Benchmark data in the paper](https://drive.google.com/drive/folders/17jSSC-EIhiSTqXSgfoEOs4R7mzKy1d1i?usp=sharing)
 

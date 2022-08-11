@@ -10,7 +10,7 @@ This paper studies the narrow phase collision detection problem for two general 
 ## Links
 - [Paper](https://ieeexplore.ieee.org/document/9829274){:target="_blank"}
 - Code: 
-  - [Core C++ library](https://github.com/ChirikjianLab/cfc-collision.git){:target="_blank"}, [API documentation](/resources/doc/v0.1.0){:target="_blank"}: templated header-only library for collision detection algorithms
+  - [Core C++ library](https://github.com/ChirikjianLab/cfc-collision.git){:target="_blank"}, [API documentation]({{site.baseurl}}/resources/doc/v0.1.0){:target="_blank"}: templated header-only library for collision detection algorithms
   - [App](https://github.com/ChirikjianLab/cfc-collision-app.git){:target="_blank"}: application in motion planning, including visualization
   - [MATLAB implementation](https://github.com/ChirikjianLab/cfc-collision-matlab.git){:target="_blank"}: MATLAB version for algorithms. It also includes visualizaions for figures in the paper and benchmark results from C++ implementations.
 

@@ -37,8 +37,7 @@ This is the C++ implementation for the narrow phase collision detection problem 
 [sudo] apt install libgtest-dev
 ```
 
-**Note** 
-The script to automatically install the above dependencies is provided in "/script/install-dependencies.sh".
+**Note**: The script to automatically install the above dependencies is provided in "/script/install-dependencies.sh".
 
 ## Compilation and installation
 The core implementation is a templated header-only library. To use the classes, there is no need to compile but you could simply copy the "/include" directory to the specific path and link/include in your own project correctly.
@@ -57,8 +56,7 @@ mkdir build && cd build
 cmake .. && make
 ```
 
-**Note**
-By default, the test and benchmark scripts are built if the correct external libraries are installed and found. To disable testing, add argument in the cmake step
+**Note**: By default, the test and benchmark scripts are built if the correct external libraries are installed and found. To disable testing, add argument in the cmake step
 ```sh
 cmake -DBUILD_TESTING=off ../
 ```
@@ -95,8 +93,7 @@ To uninstall,
 [sudo] make uninstall
 ```
 
-**Note**
-By default, the header files of the core library will be installed within "/usr/local". You could also specify the folder in the "cmake" step by 
+**Note**: By default, the header files of the core library will be installed within "/usr/local". You could also specify the folder in the "cmake" step by 
 ```sh
 cmake -DCMAKE_INSTALL_PREFIX=/your/specified/path/ ../
 ```
@@ -123,19 +120,22 @@ Executables for benchmark in both static and continuous cases are located in "/b
 Results are stored in "/data" folder, which is automatically generated at build time. After running the benchmark script, several ".csv" files will be generated to record the results (each row corresponds to one experimental trial):
 
 For static case:
-- "bench_config_${GeomType}_s1.csv", "bench_config_${GeomType2}_s2.csv": Configuration for the two bodies.
-- "bench_result_${GeomType}_${GeomType}_${StaticMethod}.csv": Benchmark results for different methods.
+- `bench_config_${GeomType}_s1.csv`, `bench_config_${GeomType2}_s2.csv`: Configuration for the two bodies.
+- `bench_result_${GeomType}_${GeomType}_${StaticMethod}.csv`: Benchmark results for different methods.
 
 For continuous case:
-- "bench_config_continuous_${GeomType}_s1.csv", "bench_config_continuous_${GeomType2}_s2.csv": Configuration for the two bodies.
-- "bench_result_continuous_${GeomType}_${GeomType}_${CCDMethod}.csv": Benchmark results for different methods.
+- `bench_config_continuous_${GeomType}_s1.csv`, `bench_config_continuous_${GeomType2}_s2.csv`: Configuration for the two bodies.
+- `bench_result_continuous_${GeomType}_${GeomType}_${CCDMethod}.csv`: Benchmark results for different methods.
 
-To visualize the benchmark results (i.e., comparisons on running time, accuracy and number of iterations), please refer to the [instructions](https://github.com/ChirikjianLab/cfc-collision-matlab/blob/main/data/README.md) in the repository of MATLAB implementation.
+To visualize the benchmark results (i.e., comparisons on running time, accuracy and number of iterations), please refer to the [instructions](https://github.com/ChirikjianLab/cfc-collision-matlab/blob/main/data/README.md) in the repository of MATLAB implementation. Demonstrated benchmark results (including the ones shown in the paper) are [available](https://drive.google.com/drive/folders/17jSSC-EIhiSTqXSgfoEOs4R7mzKy1d1i?usp=sharing).
 
-**Note**
+**Note**:
 - ${GeomType} = {"SQ", "E", "PE"}
 - ${StaticMethod} = {"CFCFixedPoint", "CFCLeastSquares", "CFCLeastSquaresCommonNormal", "FCL", "Implicit", "CommonNormalFixedPoint", "CommonNormalLeaseSquares"}
 - ${CCDMethod} = {"CFCLeastSquaresTran", "CFCLeastSquaresLinear"}
+
+## API documentation
+[Latest (v0.1.0)](https://chirikjianlab.github.io/cfc-collision/resources/doc/v0.1.0/)
 
 ## Reference
 If you find our work useful in your research, please consider citing:

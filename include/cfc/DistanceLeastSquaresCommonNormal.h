@@ -60,7 +60,9 @@ class CostLeastSquaresCommonNormal {
     ~CostLeastSquaresCommonNormal();
 
   public:
-    /** \brief Cost function */
+    /** \brief Cost function
+     * \param psi Variables to be optimized
+     * \param cost Cost function value */
     template <typename T>
     bool operator()(const T* const psi, T* cost) const;
 

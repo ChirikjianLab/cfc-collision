@@ -14,21 +14,37 @@ This is the C++ implementation for the narrow phase collision detection problem 
 ## Dependency
 ### Required for core library
 - [Ceres solver](http://ceres-solver.org/installation.html) (>= 2.0): Solver for nonlinear least-squares optimization
-- Eigen3 `[sudo] apt install libeigen3-dev`
-- Boost (>= 1.71) `[sudo] apt install libboost1.71.0-all-dev`
+- Eigen3 
+```sh
+[sudo] apt install libeigen3-dev
+```
+- Boost (>= 1.71) 
+```sh
+[sudo] apt install libboost1.71.0-all-dev
+```
 
 ### Optional for testing and benchmark
 - [ifopt](https://github.com/ethz-adrl/ifopt): Solver for constrained optimization using interior-point method
 - [FCL](https://github.com/flexible-collision-library/fcl) (>= 0.6): Flexible collision library
 - [libccd](https://github.com/danfis/libccd.git): Dependency for FCL
-- google-test `[sudo] apt install libgtest-dev`: Unit test tool
+- google-test: Unit test tool
+```sh
+[sudo] apt install libgtest-dev
+```
 
-The script to automatically install the above dependencies is provided in `/script/install-dependencies.sh`.
+**Note** The script to automatically install the above dependencies is provided in "/script/install-dependencies.sh".
 
 ## Compilation and installation
-The core implementation is a templated header-only library. Therefore, to use the classes, there is no need to compile but you could simply copy the `/include` directory to the specific path and link/include in your own project correctly. The following compilation instructions are only for unit tests and benchmark scripts. The following installation step will copy all the core header files into the default or user-speficied installation directory.
+The core implementation is a templated header-only library. To use the classes, there is no need to compile but you could simply copy the "/include" directory to the specific path and link/include in your own project correctly.
 
-### Build in localhost
+### Download the repository
+- Clone the repository
+```sh
+git clone https://github.com/ChirikjianLab/cfc-collision.git
+```
+
+### Build 
+#### Build in localhost
 - Installation can follow the standard CMake project. After clonging and go to the source directory,
 ```sh
 mkdir build && cd build
@@ -46,20 +62,16 @@ cmake -DBUILD_TESTING=off ../
 make test
 ```
 
-### Build using Docker
-- In the `/home` directory, make a new folder `/docker`, and clone the source file
+#### Build using Docker
+- After cloning the repository, go to "/script" folder and start Docker container
 ```sh
-mkdir ~/docker
-cd ~/docker
-git clone https://github.com/ruansp/cfc_collision
-```
-- Start Docker container
-```sh
-cd cfc_collision/script
+cd /script
 chmod +x start_docker.sh
 ./start_docker.sh
 ```
-- It will download the image if the first time. Then build the package _inside the container_,
+It will download the image if for the first time. 
+
+- Then, build the package _inside the container_,
 ```sh
 cd /home/cfc
 mkdir build && cd build
@@ -67,7 +79,7 @@ cmake .. && make
 ```
 
 ### Installation
-After compilation, inside the `/build` directory,
+After compilation, inside the "/build" directory,
 ```sh
 [sudo] make install
 ```
@@ -78,20 +90,20 @@ To uninstall,
 ```
 
 **Note**
-By default, the header files of the core library will be installed within `/usr/local`. You could also specify the folder in the "cmake" step by 
+By default, the header files of the core library will be installed within "/usr/local". You could also specify the folder in the "cmake" step by 
 ```sh
-cmake -DCMAKE_INSTALL_PREFIX=/your/specified/path ../
+cmake -DCMAKE_INSTALL_PREFIX=/your/specified/path/ ../
 ```
 
 ## Running instructions
 ### Command line arguments for benchmarks
-Executables for benchmark in both static and continuous cases are located in `/build/test/benchmark` folder.
+Executables for benchmark in both static and continuous cases are located in "/build/test/benchmark" folder.
 
-- [`BenchmarkDistanceStatic`](/test/benchmark/BenchmarkDistanceStatic.cpp): Benchmarks for static collision detection.
+- [BenchmarkDistanceStatic.cpp](/test/benchmark/BenchmarkDistanceStatic.cpp): Benchmarks for static collision detection.
 ```sh
 ./BenchmarkDistanceStatic 100 all 10
 ```
-- [`BenchmarkDistanceContinuous`](/test/benchmark/BenchmarkDistanceContinuous.cpp): Benchmarks for continuous collision detection.
+- [BenchmarkDistanceContinuous.cpp](/test/benchmark/BenchmarkDistanceContinuous.cpp): Benchmarks for continuous collision detection.
 ```sh
 ./BenchmarkDistanceContinuous 100 all 10
 ```
@@ -102,17 +114,17 @@ Executables for benchmark in both static and continuous cases are located in `/b
 - (Optional) Number of sampled vertices on each surface (default = 20).
 
 ### Result files
-Results are stored in `/data` folder, which is automatically generated at build time. After running the benchmark script, several `.csv` files will be generated to record the results (each row corresponds to one experimental trial):
+Results are stored in "/data" folder, which is automatically generated at build time. After running the benchmark script, several ".csv" files will be generated to record the results (each row corresponds to one experimental trial):
 
 For static case:
-- `bench_config_${GeomType}_s1.csv`, `bench_config_${GeomType2}_s2.csv`: Configuration for the two bodies.
-- `bench_result_${GeomType}_${GeomType}_${StaticMethod}.csv`: Benchmark results for different methods.
+- "bench_config_${GeomType}_s1.csv", "bench_config_${GeomType2}_s2.csv": Configuration for the two bodies.
+- "bench_result_${GeomType}_${GeomType}_${StaticMethod}.csv": Benchmark results for different methods.
 
 For continuous case:
-- `bench_config_continuous_${GeomType}_s1.csv`, `bench_config_continuous_${GeomType2}_s2.csv`: Configuration for the two bodies.
-- `bench_result_continuous_${GeomType}_${GeomType}_${CCDMethod}.csv`: Benchmark results for different methods.
+- "bench_config_continuous_${GeomType}_s1.csv", "bench_config_continuous_${GeomType2}_s2.csv": Configuration for the two bodies.
+- "bench_result_continuous_${GeomType}_${GeomType}_${CCDMethod}.csv": Benchmark results for different methods.
 
-To visualize the benchmark results (i.e., comparisons on running time, accuracy and number of iterations), please refer to the [instructions](https://github.com/ruansp/cfc_collision_matlab/blob/main/data/README.md) in the repository of MATLAB implementation.
+To visualize the benchmark results (i.e., comparisons on running time, accuracy and number of iterations), please refer to the [instructions](https://github.com/ChirikjianLab/cfc-collision-matlab/blob/main/data/README.md) in the repository of MATLAB implementation.
 
 **Note**
 - ${GeomType} = {"SQ", "E", "PE"}

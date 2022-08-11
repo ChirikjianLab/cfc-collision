@@ -46,6 +46,7 @@ const double EPSILON = 1e-8;
 
 namespace cfc {
 
+/** \brief Supported geometric types */
 enum GEOM_TYPE { ELLIPSOID, SUPERQUADRICS, POLYELLIPSOID };
 
 /** \brief Shape info for geometries (3D) */

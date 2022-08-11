@@ -46,6 +46,9 @@ CostLeastSquaresCommonNormal<G1, G2>::CostLeastSquaresCommonNormal(
 template <typename G1, typename G2>
 CostLeastSquaresCommonNormal<G1, G2>::~CostLeastSquaresCommonNormal() {}
 
+/** \brief Cost function
+ * \param psi Variables to be optimized
+ * \param cost Cost function value */
 template <typename G1, typename G2>
 template <typename T>
 bool CostLeastSquaresCommonNormal<G1, G2>::operator()(const T* const psi,
